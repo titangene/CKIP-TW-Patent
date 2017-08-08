@@ -6,7 +6,7 @@ import java.util.Properties;
 
 import tw.cheyingwu.ckip.CKIP;
 
-class CKIPSource {
+public class CKIPSource {
 	private CKIP ckip;
 	private Properties props;
 	private String ip;
@@ -30,6 +30,7 @@ class CKIPSource {
 	
 	public CKIP getConnection() {
 		ckip = new CKIP(ip, port, username, password);
+		System.out.println("CKIP Connection");
 		return ckip;
 	}
 	
