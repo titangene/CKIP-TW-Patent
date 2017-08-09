@@ -42,12 +42,10 @@ public class DBOperations {
 		}
 	}
 
-	public void insertTable(String insertdbSQL, String name, int Score) {
+	public void insertTable(String insertdbSQL, Mysql_Insert mysql) {
 		try {
 			preStmt = conn.prepareStatement(insertdbSQL);
-
-			preStmt.setString(1, name);
-			preStmt.setInt(2, Score);
+			mysql.insert(preStmt);
 			preStmt.executeUpdate();
 			preStmt.clearParameters();
 		} catch (SQLException e) {
